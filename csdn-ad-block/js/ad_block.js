@@ -11,7 +11,13 @@ function adBlock() {
   displayNone(document.getElementsByClassName('csdn-side-toolbar'));
   displayNone(document.getElementsByTagName('iframe'));
 
-  document.querySelector('.btn-readmore').click();
+  // 屏蔽 ituring 的 header
+  displayNone(document.getElementsByClassName('layout-head'));
+
+  var readmore = document.querySelector('.btn-readmore');
+  if (readmore) {
+    document.querySelector('.btn-readmore').click();
+  }  
 }
 
 function displayNone(elems) {
